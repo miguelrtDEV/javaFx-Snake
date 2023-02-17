@@ -115,10 +115,10 @@ public class HelloApplication extends Application {
             timeline.play();
             setOnKeyPressed(keyEvent -> {
                 switch (keyEvent.getCode()) {
-                    case UP -> snakeDirection = Direction.UP;
-                    case DOWN -> snakeDirection = Direction.DOWN;
-                    case LEFT -> snakeDirection = Direction.LEFT;
-                    case RIGHT -> snakeDirection = Direction.RIGHT;
+                    case UP, W -> snakeDirection = Direction.UP;
+                    case DOWN, S -> snakeDirection = Direction.DOWN;
+                    case LEFT, A -> snakeDirection = Direction.LEFT;
+                    case RIGHT, D -> snakeDirection = Direction.RIGHT;
                     case ESCAPE -> {
                         if (timeline.getStatus() == Animation.Status.RUNNING) {
                             timeline.pause();
